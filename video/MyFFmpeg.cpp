@@ -5,6 +5,7 @@
 #pragma comment(lib,"swscale.lib")
 bool MyFFmpeg::Open(const char *path) {
 	Close();
+
 	mutex.lock();
 	int re = avformat_open_input(&ac, path, 0, 0);
 	if (re != 0) {//打开文件失败
